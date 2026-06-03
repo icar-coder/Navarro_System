@@ -3,10 +3,15 @@
 // Detecta la URL base del proyecto automáticamente.
 // Esto funciona bien si el proyecto está en la raíz o en un subdirectorio.
 const BASE_URL = (() => {
-    const path = window.location.pathname;
-    const segments = path.split('/').filter(Boolean);
-    if (segments.length === 0) return '/';
-    return `/${segments[0]}/`;
+    const hostname = window.location.hostname;
+    
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // Tu ruta local en XAMPP
+        return '/navarro_update/';
+    } else {
+        // Tu ruta real en el servidor de producción (Render)
+        return '/';
+    }
 })();
 console.debug('[config] BASE_URL =', BASE_URL);
 
