@@ -1,0 +1,243 @@
+/* Estilos específicos para órdenes de trabajo */
+.servicio-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.servicio-row select, .servicio-row input {
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+.btn-remove-servicio {
+    background: none;
+    border: none;
+    color: #c27c7c;
+    cursor: pointer;
+    font-size: 1.1rem;
+    width: 32px;
+}
+.btn-remove-servicio:hover {
+    color: #d9534f;
+}
+#serviciosContainer {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #eef2fa;
+    border-radius: 20px;
+    padding: 10px;
+}
+/* ============================================
+   Estilos específicos para el modal de órdenes
+   ============================================ */
+
+/* Contenedor del modal más ancho para el formulario */
+.modal-content {
+    max-width: 750px;
+    width: 90%;
+    border-radius: 28px;
+    padding: 1.5rem;
+}
+
+/* Títulos dentro del modal */
+.modal-content h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: #1e293b;
+    border-left: 5px solid #3b82f6;
+    padding-left: 15px;
+}
+
+.modal-content h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.8rem 0;
+    color: #334155;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.modal-content h3::before {
+    content: "\f0f6";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1rem;
+    color: #3b82f6;
+}
+
+/* Grupos de formulario */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+/* Contenedor de servicios (lista dinámica) */
+#serviciosContainer {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 12px;
+    margin-bottom: 12px;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+}
+
+/* Cada fila de servicio */
+.servicio-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    border: 1px solid #eef2ff;
+}
+.servicio-row select,
+.servicio-row input {
+    padding: 8px 12px;
+    border-radius: 40px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.85rem;
+    background: white;
+}
+.servicio-row select {
+    flex: 3;
+    min-width: 150px;
+}
+.servicio-row input.servicio-cantidad {
+    flex: 0.8;
+    min-width: 70px;
+}
+.servicio-row input.servicio-precio {
+    flex: 1;
+    min-width: 90px;
+}
+.btn-remove-servicio {
+    background: #fee2e2;
+    border: none;
+    color: #b91c1c;
+    width: 32px;
+    height: 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-remove-servicio:hover {
+    background: #fecaca;
+    color: #991b1b;
+    transform: scale(1.02);
+}
+
+/* Botón agregar servicio */
+#btnAgregarServicio {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    padding: 8px 16px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+}
+#btnAgregarServicio:hover {
+    background: #dbeafe;
+    border-color: #3b82f6;
+}
+
+/* Campo presupuesto total (readonly) */
+#presupuesto_total {
+    background: #f1f5f9;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Botones del formulario dentro del modal */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 1.5rem;
+}
+.form-buttons .btn-primary,
+.form-buttons .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.form-buttons .btn-primary {
+    background: #3b82f6;
+    color: white;
+}
+.form-buttons .btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+.form-buttons .btn-secondary {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+.form-buttons .btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+    .modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+    .servicio-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .servicio-row select,
+    .servicio-row input {
+        width: 100% !important;
+    }
+    .btn-remove-servicio {
+        align-self: flex-end;
+    }
+}

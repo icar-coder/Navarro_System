@@ -1,0 +1,22 @@
+/* ---------- RESET GLOBAL Y BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f9ff;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+

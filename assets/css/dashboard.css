@@ -1,0 +1,159 @@
+/* dashboard.css - versión moderna */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.dashboard-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.fecha-badge {
+    background: #f1f5f9;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    color: #1e293b;
+}
+.btn-refresh {
+    background: #3b82f6;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.btn-refresh:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.stat-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: #eff6ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: #3b82f6;
+}
+.stat-card:nth-child(2) .stat-icon { background: #fef3c7; color: #f59e0b; }
+.stat-card:nth-child(3) .stat-icon { background: #e0f2fe; color: #0ea5e9; }
+.stat-card:nth-child(4) .stat-icon { background: #dcfce7; color: #10b981; }
+.stat-card:nth-child(5) .stat-icon { background: #fee2e2; color: #ef4444; }
+.stat-card:nth-child(6) .stat-icon { background: #f3e8ff; color: #a855f7; }
+
+.stat-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: #0f172a;
+}
+.stat-info p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.dashboard-grid-main,
+.dashboard-grid-secondary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.card h3 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.chart-card {
+    padding: 1rem;
+}
+.mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+.mini-table th,
+.mini-table td {
+    text-align: left;
+    padding: 0.6rem 0.3rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+.mini-table th {
+    font-weight: 600;
+    color: #475569;
+}
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 40px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: #e2e8f0;
+    color: #334155;
+}
+.status-badge.Recepcionada { background: #dbeafe; color: #1e40af; }
+.status-badge.EnProceso { background: #fef3c7; color: #b45309; }
+.status-badge.Terminada { background: #dcfce7; color: #15803d; }
+.status-badge.Facturada { background: #e0f2fe; color: #0f766e; }
+.status-badge.Cancelada { background: #fee2e2; color: #b91c1c; }
+.status-badge.Pendiente { background: #f1f5f9; color: #475569; }
+.status-badge.Confirmada { background: #dcfce7; color: #15803d; }
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid-main,
+    .dashboard-grid-secondary {
+        grid-template-columns: 1fr;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
