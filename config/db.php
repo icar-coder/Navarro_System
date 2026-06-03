@@ -51,7 +51,13 @@ class Database {
             
         } catch (Exception $e) {
             error_log("Falla de conexión: " . $e->getMessage());
-            exit("Error interno del servidor.");
+            http_response_code(500);
+            if (ini_get('display_errors')) {
+                echo json_encode(["error" => "Falla de conexión", "message" => $e->getMessage()]);
+            } else {
+                echo json_encode(["error" => "Error interno del servidor."]);
+            }
+            exit;
         }
         return $this->conn;
     }
