@@ -18,6 +18,7 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Redirigir al login (ruta absoluta para evitar 404 desde includes)
-header("Location: /navarro_update/vistas/login.php");
+include_once __DIR__ . '/config.php';
+header("Location: " . URL_BASE . "vistas/login.php");
 exit();
 ?>

@@ -5,7 +5,8 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 $usuarioId = $_SESSION['usuario_id'] ?? $_SESSION['id'] ?? null;
 if (!$usuarioId) {
     // Redirigir a login si no está autenticado
-    header('Location: /navarro_update/vistas/login.php');
+    include_once __DIR__ . '/../config.php';
+    header('Location: ' . URL_BASE . 'vistas/login.php');
     exit();
 }
 
@@ -16,7 +17,8 @@ $rol = strtolower(trim($rolRaw));
 // Roles válidos que tienen acceso a la configuración
 $allowedRoles = ['administrador', 'admin', 'superadmin'];
 if (!in_array($rol, $allowedRoles, true)) {
-    header('Location: /navarro_update/vistas/dashboard_view.php');
+    include_once __DIR__ . '/../config.php';
+    header('Location: ' . URL_BASE . 'vistas/dashboard_view.php');
     exit();
 }
 

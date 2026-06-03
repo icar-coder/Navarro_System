@@ -1,7 +1,8 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario_id'])) {
-    header("Location: /navarro_update/vistas/dashboard_view.php");
+    include_once __DIR__ . '/../config.php';
+    header("Location: " . URL_BASE . "vistas/dashboard_view.php");
     exit();
 }
 ?>
@@ -101,7 +102,7 @@ if (isset($_SESSION['usuario_id'])) {
             try {
                 const res = await apiRequest('auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
                 if (res.success) {
-                    window.location.href = '/navarro_update/vistas/dashboard_view.php';
+                        window.location.href = URL_BASE + 'vistas/dashboard_view.php';
                 } else {
                     Swal.fire('Error', res.error || 'Credenciales incorrectas', 'error');
                 }
