@@ -102,12 +102,12 @@ if (isset($_SESSION['usuario_id'])) {
             try {
                 const res = await apiRequest('auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
                 if (res.success) {
-                        window.location.href = URL_BASE + 'vistas/dashboard_view.php';
+                        window.location.href = BASE_URL + 'vistas/dashboard_view.php';
                 } else {
                     Swal.fire('Error', res.error || 'Credenciales incorrectas', 'error');
                 }
             } catch (err) {
-                Swal.fire('Error', 'Error de conexión', 'error');
+                Swal.fire('Error', err.message || 'Error de conexión', 'error');
             }
         });
     </script>
