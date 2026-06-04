@@ -43,7 +43,7 @@ class Database {
     public function getConnection() {
         $this->conn = null;
         try {
-            mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+            //mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
             
             // Pasamos también el puerto al constructor de mysqli por si el servidor externo usa uno diferente a 3306
             $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db_name, $this->port);
